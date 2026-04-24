@@ -138,8 +138,16 @@ def chat():
         return jsonify({"reply": response.text})
         
     except Exception as e:
-        print(f"SDK DEBUG: {str(e)}")
-        return jsonify({"reply": f"Sorry! Gemini SDK failed: {str(e)}"}), 500
+        available_models_str = "Could not fetch models"
+        try:
+            available = [m.name for m in genai.list_models() if 'generateContent' in m.supported_generation_methods]
+            available_models_str = ", ".join(available)
+        except:
+            pass
+            
+        error_msg = f"Sorry! The model is blocked for this key. Here are the models your key is ALLOWED to use: {available_models_str}"
+        print(error_msg)
+        return jsonify({"reply": error_msg}), 500
 
 if __name__ == "__main__":
     app.run(port=5000)

@@ -1,7 +1,6 @@
 from flask import Flask, request, jsonify
+import google.generativeai as genai
 from flask_cors import CORS
-import urllib.request
-import json
 import os
 from dotenv import load_dotenv
 
@@ -10,9 +9,9 @@ load_dotenv()
 app = Flask(__name__)
 CORS(app)
 
-# 🔑 Gemini API key
-API_KEY = os.getenv("GEMINI_API_KEY")
-GEMINI_URL = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={API_KEY}"
+# 🔑 Configure Gemini using the official SDK
+genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
+model = genai.GenerativeModel("gemini-1.5-flash")
 
 # 🧠 Your portfolio data (important)
 data = """
@@ -33,16 +32,12 @@ EDUCATION:
 TECHNICAL SKILLS:
 Programming Languages:
 - Python, Java, C
-
 Libraries & Tools:
 - NumPy, Pandas, OpenCV
-
 Frameworks:
 - Django, Flask, Streamlit
-
 Database:
 - SQL
-
 Concepts:
 - Data Structures and Algorithms
 - Machine Learning Basics
@@ -50,7 +45,6 @@ Concepts:
 - Problem Solving
 
 PROJECTS:
-
 1. FloatChat – Ocean Data Processing Platform:
 - Developed a Python-based system to process oceanographic data from Argo floats
 - Worked with NetCDF datasets
@@ -119,63 +113,33 @@ A: She combines strong academic performance with practical project experience an
 
 Q: Why should we hire her?
 A: She has strong fundamentals, hands-on project experience, and a passion for AI, making her a valuable addition to any team.
-
-RULES FOR AI:
-- Answer only based on the provided information
-- Be clear, professional, and concise
-- If information is not available, say "I don't have that information"
 """
 
 @app.route("/api/chat", methods=["POST"])
 def chat():
-    user_message = request.json.get("message")
-
-    prompt = f"""
-    You are Poojha's AI assistant.
-
-    RULES:
-    - Answer ONLY from the given data
-    - Be clear and professional. Answer politely in 1-3 sentences.
-    - If unknown, say "I don't have that information"
-
-    DATA:
-    {data}
-
-    QUESTION:
-    {user_message}
-    """
-
-    payload = {
-        "contents": [{
-            "parts": [{"text": prompt}]
-        }]
-    }
-
-    req = urllib.request.Request(
-        GEMINI_URL, 
-        data=json.dumps(payload).encode('utf-8'), 
-        headers={'Content-Type': 'application/json'}
-    )
-    
     try:
-        with urllib.request.urlopen(req) as response:
-            result = json.loads(response.read().decode('utf-8'))
-            reply_text = result["candidates"][0]["content"]["parts"][0]["text"]
-            return jsonify({"reply": reply_text})
-    except Exception as e:
-        error_body = ""
-        if hasattr(e, 'read'):
-            try:
-                error_body = e.read().decode('utf-8')
-            except:
-                pass
+        user_message = request.json.get("message")
         
-        debug_msg = f"DEBUG Exception: {str(e)}"
-        if error_body:
-            debug_msg += f" --- Details: {error_body}"
-            
-        print(debug_msg)
-        return jsonify({"reply": debug_msg})
+        prompt = f"""
+        You are Poojha's AI assistant.
+        RULES:
+        - Answer ONLY from the given data
+        - Be clear and professional. Answer politely in 1-3 sentences.
+        - If unknown, say "I don't have that information"
+
+        DATA:
+        {data}
+
+        QUESTION:
+        {user_message}
+        """
+
+        response = model.generate_content(prompt)
+        return jsonify({"reply": response.text})
+        
+    except Exception as e:
+        print(f"SDK DEBUG: {str(e)}")
+        return jsonify({"reply": f"Sorry! Gemini SDK failed: {str(e)}"}), 500
 
 if __name__ == "__main__":
     app.run(port=5000)

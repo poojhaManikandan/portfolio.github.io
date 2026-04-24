@@ -11,7 +11,7 @@ CORS(app)
 
 # 🔑 Configure Gemini using the official SDK
 genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
-model = genai.GenerativeModel("gemini-2.0-flash")
+model = genai.GenerativeModel("gemini-2.0-flash-lite")
 
 # 🧠 Your portfolio data (important)
 data = """
@@ -139,7 +139,7 @@ def chat():
         
     except Exception as e:
         print(f"Server Error: {str(e)}")
-        return jsonify({"reply": f"DEBUG_ERROR_V2: {str(e)}"}), 500
+        return jsonify({"reply": "I'm having trouble connecting right now. Please try again in a moment!"}), 500
 
 if __name__ == "__main__":
     app.run(port=5000)

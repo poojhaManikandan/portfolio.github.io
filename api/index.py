@@ -11,7 +11,7 @@ CORS(app)
 
 # 🔑 Configure Gemini using the official SDK
 genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
-model = genai.GenerativeModel("gemini-1.5-flash-latest")
+model = genai.GenerativeModel("gemini-2.0-flash")
 
 # 🧠 Your portfolio data (important)
 data = """
@@ -138,16 +138,8 @@ def chat():
         return jsonify({"reply": response.text})
         
     except Exception as e:
-        available_models_str = "Could not fetch models"
-        try:
-            available = [m.name for m in genai.list_models() if 'generateContent' in m.supported_generation_methods]
-            available_models_str = ", ".join(available)
-        except:
-            pass
-            
-        error_msg = f"Sorry! The model is blocked for this key. Here are the models your key is ALLOWED to use: {available_models_str}"
-        print(error_msg)
-        return jsonify({"reply": error_msg}), 500
+        print(f"Server Error: {str(e)}")
+        return jsonify({"reply": "I'm having trouble connecting to my brain right now! Please try again later."}), 500
 
 if __name__ == "__main__":
     app.run(port=5000)

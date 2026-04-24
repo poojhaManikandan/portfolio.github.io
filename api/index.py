@@ -11,7 +11,7 @@ CORS(app)
 
 # 🔑 Configure Gemini using the official SDK
 genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
-model = genai.GenerativeModel("gemini-2.0-flash-lite")
+model = genai.GenerativeModel("gemini-flash-latest")
 
 # 🧠 Your portfolio data (important)
 data = """

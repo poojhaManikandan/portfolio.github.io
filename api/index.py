@@ -163,8 +163,19 @@ def chat():
             reply_text = result["candidates"][0]["content"]["parts"][0]["text"]
             return jsonify({"reply": reply_text})
     except Exception as e:
-        print(f"Error calling Gemini API: {e}")
-        return jsonify({"reply": "I'm having trouble thinking right now! Try again later."}), 500
+        error_body = ""
+        if hasattr(e, 'read'):
+            try:
+                error_body = e.read().decode('utf-8')
+            except:
+                pass
+        
+        debug_msg = f"DEBUG Exception: {str(e)}"
+        if error_body:
+            debug_msg += f" --- Details: {error_body}"
+            
+        print(debug_msg)
+        return jsonify({"reply": debug_msg})
 
 if __name__ == "__main__":
     app.run(port=5000)

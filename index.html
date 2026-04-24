@@ -2,145 +2,257 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Poojha | Portfolio</title>
+    <title>Poojha M | Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Poojha M, an AI & Data Science student.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Devicon -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- NAVBAR -->
-<nav class="navbar">
-    <div class="logo">Poojha Portfolio</div>
-    <ul class="nav-links">
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#achievements">Achievements & Certifications</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
-</nav>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">POOJHA M</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Internship</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#achievements">Achievements</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-<!-- HERO (Name + 2 lines ONLY) -->
-<header class="hero simple-animate">
-    <h1>Poojha M</h1>
-    <p class="tagline">
-        AI & Data Science student with an interest in Python, data science,
-        and machine learning.
-    </p>
-    <p class="tagline">
-        Focused on learning through hands-on projects.
-    </p>
-</header>
+    <!-- HERO -->
+    <header id="about" class="hero section">
+        <div class="hero-content simple-animate">
+            <h1 class="glitch-text">Hello, I'm Poojha M</h1>
+            <h2 class="subtitle">AI & Data Science Student</h2>
+            <p class="summary">
+                Hi! I'm a second-year B.Tech student exploring the world of Artificial Intelligence and Data Science. I really enjoy working on Machine learning models and putting together software that solves practical problems. Right now, I'm focused on growing my skills in Machine Learning and Data Science. I love translating tricky technical concepts into tools that people can actually use.
+            </p>
+            <div class="hero-btns">
+                <a href="https://github.com/poojhaManikandan" target="_blank" class="btn btn-primary"><i class="fab fa-github"></i> GitHub</a>
+                <a href="#projects" class="btn btn-outline">See My Work</a>
+            </div>
+        </div>
+    </header>
 
-<!-- EDUCATION -->
-<section id="education" class="section center simple-animate">
-    <h2>Education</h2>
-    <p><strong>K.S. Rangasamy College of Technology</strong></p>
-    <p>B.Tech – Artificial Intelligence & Data Science</p>
-    <p>CGPA: <strong>9.4</strong></p>
-</section>
+    <!-- SKILLS -->
+    <section id="skills" class="section center">
+        <h2 class="section-title simple-animate">Technical Skills</h2>
+        <div class="skills-visual-grid simple-animate">
+            <div class="skill-circle" title="Python"><i class="devicon-python-plain colored"></i></div>
+            <div class="skill-circle" title="C"><i class="devicon-c-plain colored"></i></div>
+            <div class="skill-circle" title="Java"><i class="devicon-java-plain colored"></i></div>
+            <div class="skill-circle" title="NumPy"><i class="devicon-numpy-plain colored"></i></div>
+            <div class="skill-circle" title="Pandas"><i class="devicon-pandas-plain colored"></i></div>
+            <div class="skill-circle" title="Scikit-Learn"><img src="https://cdn.simpleicons.org/scikitlearn/F7931E" alt="Scikit-Learn"></div>
+            <div class="skill-circle" title="SQL"><i class="devicon-mysql-plain colored"></i></div>
+            <div class="skill-circle" title="Django"><i class="devicon-django-plain"></i></div>
+            <div class="skill-circle" title="Flask"><i class="devicon-flask-original"></i></div>
+            <div class="skill-circle" title="Streamlit"><img src="https://cdn.simpleicons.org/streamlit/FF4B4B" alt="Streamlit"></div>
+        </div>
+    </section>
 
-<!-- SKILLS -->
-<section id="skills" class="section center simple-animate">
-    <h2>Skills</h2>
-    <div class="skills">
-        <span>C</span>
-        <span>Python</span>
-        <span>Java</span>
-        <span>DSAa</span>
-        <span>SQL</span>
-        <span>Pandas</span>
-        <span>NumPy</span>
-        <span>Machine Learning (Basics)</span>
-        <span>Data Science (Basics)</span>
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+        <h2 class="section-title center simple-animate">Featured Projects</h2>
+        
+        <!-- HIGH IMPACT & VISUAL PROJECT CARDS -->
+        <div class="projects-grid">
+            
+            <!-- FloatChat -->
+            <div class="project-card glass-card simple-animate">
+                <div class="project-content">
+                    <h3>FloatChat – Ocean Data Processing Platform</h3>
+                    <ul class="project-bullets">
+                        <li><strong>Impact:</strong> Simplified complex oceanographic data so researchers without a coding background could interpret it instantly.</li>
+                        <li><strong>How:</strong> Built a Python backend pipeline to parse massive datasets (NetCDF format) from Argo floats, extracting critical temperature and salinity metrics.</li>
+                    </ul>
+                </div>
+                <div class="project-links">
+                    <span class="badge">Python</span>
+                    <div class="link-group">
+                        <a href="https://github.com/Aariyan7/Float_Chat" target="_blank" class="icon-link" title="Source Code"><i class="fab fa-github"></i> Source</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Animal Detection -->
+            <div class="project-card glass-card simple-animate">
+                <div class="project-content">
+                    <h3>Animal Detection & Monitoring</h3>
+                    <ul class="project-bullets">
+                        <li><strong>Impact:</strong> Enabled automated, real-time wildlife monitoring by replacing manual human observation with an AI system.</li>
+                        <li><strong>How:</strong> Trained a custom Computer Vision model to accurately classify species, then integrated it with live camera feeds for instant detection.</li>
+                    </ul>
+                </div>
+                <div class="project-links">
+                    <span class="badge">Computer Vision</span>
+                    <div class="link-group">
+                        <a href="https://github.com/poojhaManikandan/animal_detection" target="_blank" class="icon-link" title="Source Code"><i class="fab fa-github"></i> Source</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Movie Recommendation System -->
+            <div class="project-card glass-card simple-animate">
+                <div class="project-content">
+                    <h3>Movie Recommendation Engine</h3>
+                    <span class="status-badge">Developing</span>
+                    <ul class="project-bullets">
+                        <li><strong>Impact:</strong> Creating a highly personalized discovery experience that helps users find movies they'll actually enjoy based on past behavior.</li>
+                        <li><strong>How:</strong> Testing various machine learning algorithms and collaborative filtering techniques to predict optimal viewing suggestions.</li>
+                    </ul>
+                </div>
+                <div class="project-links">
+                    <span class="badge">Machine Learning</span>
+                    <div class="link-group">
+                        <a href="#" target="_blank" class="icon-link" title="Source Code"><i class="fab fa-github"></i> Source</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- OTHER MINI PROJECTS LIST -->
+        <h3 class="subsection-title simple-animate">Other Projects</h3>
+        <div class="mini-projects-list glass-card simple-animate">
+            <div class="mini-item">
+                <div class="mini-info">
+                    <h4>Library Management System</h4>
+                    <p>A Java desktop app to track book issuing and returning, replacing manual record keeping.</p>
+                </div>
+                <a href="https://github.com/poojhaManikandan/Library_Management" target="_blank" class="icon-link"><i class="fab fa-github"></i></a>
+            </div>
+            
+            <div class="mini-item">
+                <div class="mini-info">
+                    <h4>Threatly – Misinformation Analyzer</h4>
+                    <p>An NLP prototype designed to scan text and flag potentially fake news.</p>
+                </div>
+                <a href="#" target="_blank" class="icon-link"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section center">
+        <h2 class="section-title simple-animate">Online Internship</h2>
+        <div class="timeline simple-animate">
+            <div class="timeline-item glass-card">
+                <h3>Machine Learning & Data Science Virtual Intern</h3>
+                <h4 class="company">EduSkills</h4>
+                <ul class="text-left project-bullets">
+                    <li>Used Python and machine learning libraries to analyze real datasets and build predictive models.</li>
+                    <li>Got hands-on experience with the complete ML lifecycle—from cleaning messy data to training, testing, and tweaking the models.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education" class="section center">
+        <h2 class="section-title simple-animate">Education & Certifications</h2>
+        <div class="education-container">
+            <div class="edu-card glass-card simple-animate">
+                <h3>Bachelor of Technology in AI and Data Science</h3>
+                <p class="inst">K.S.Rangasamy College of Technology, Tiruchengode, India</p>
+                <p class="score">CGPA: <span class="highlight">9.4 / 10</span></p>
+            </div>
+            
+            <div class="edu-card glass-card simple-animate">
+                <h3>High School</h3>
+                <p class="inst">Isha Vidhya Matric Hr.Sec School, Erode, India</p>
+                <p class="score">12th Grade: <span class="highlight">91%</span></p>
+                <p class="score">10th Grade: <span class="highlight">94.6%</span></p>
+            </div>
+
+            <div class="cert-card glass-card simple-animate">
+                <h3>Certifications</h3>
+                <ul class="text-left project-bullets" style="padding-left: 20px;">
+                    <li>Google: Machine Learning Crash Course</li>
+                    <li>Microsoft: AI & ML using Microsoft Fabric</li>
+                    <li>IBM: Data Science 101</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ACHIEVEMENTS -->
+    <section id="achievements" class="section center">
+        <h2 class="section-title simple-animate">Achievements</h2>
+        <ul class="achievements-list glass-card text-left simple-animate">
+            <li><i class="fas fa-trophy highlight-icon"></i> Made it to the finals at the AI for Good Hackathon with a project focused on social impact.</li>
+            <li><i class="fas fa-code highlight-icon"></i> Practiced my problem-solving by cracking over 150 DSA questions on competitive coding sites.</li>
+            <li><i class="fas fa-file-alt highlight-icon"></i> Gave presentations on technical topics at several inter-college events.</li>
+            <li><i class="fas fa-laptop-code highlight-icon"></i> I love competing and building software quickly in hackathons and codeathons.</li>
+        </ul>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section center">
+        <div class="contact-card glass-card simple-animate">
+            <h2 class="section-title">Get In Touch</h2>
+            <p>Feel free to reach out! I'm always open to discussing tech, collaborating on interesting projects, or just having a chat about the industry.</p>
+            
+            <div class="contact-info">
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Erode, India</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>+91 9940718507</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:poojhacs.erd@gmail.com">poojhacs.erd@gmail.com</a>
+                </div>
+                <div class="info-item">
+                    <i class="fab fa-linkedin"></i>
+                    <a href="https://www.linkedin.com/in/poojha-manikandan-332974316" target="_blank">LinkedIn Profile</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI CHATBOT INTERFACE -->
+    <button id="chat-toggle-btn" class="chat-toggle-btn" aria-label="Open AI Chat">
+        <i class="fas fa-robot"></i>
+    </button>
+
+    <div id="chat-window" class="chat-window glass-card hidden">
+        <div class="chat-header">
+            <div class="chat-title">
+                <i class="fas fa-robot"></i> Poojha's AI Agent
+            </div>
+            <button id="chat-close-btn" class="chat-close-btn" aria-label="Close Chat"><i class="fas fa-times"></i></button>
+        </div>
+        <div id="chat-body" class="chat-body">
+            <div class="chat-message bot-message">
+                Hi! I'm Poojha's AI assistant. Ask me anything about her skills, experience, or projects!
+            </div>
+        </div>
+        <div class="chat-footer">
+            <input type="text" id="chat-input" placeholder="Ask something..." autocomplete="off" />
+            <button id="chat-send-btn" class="chat-send-btn" aria-label="Send"><i class="fas fa-paper-plane"></i></button>
+        </div>
     </div>
-</section>
 
-<!-- PROJECTS -->
-<section id="projects" class="section center simple-animate">
-    <h2>Projects</h2>
+    <footer>
+        <p>© 2026 Poojha M. All rights reserved.</p>
+    </footer>
 
-    <div class="projects">
-
-        <!-- FloatChat -->
-        <div class="project-card">
-            <h3>FloatChat Application</h3>
-            <p>Simple floating chat application.</p>
-            <a class="btn"
-               href="https://github.com/Aariyan7/Float_Chat"
-               target="_blank">
-               View on GitHub
-            </a>
-        </div>
-
-        <!-- Patient Appointment (NO LINK – ongoing) -->
-        <div class="project-card">
-            <h3>Patient Appointment Booking System</h3>
-            <span class="badge">Ongoing</span>
-            <p>System to manage patient appointments.</p>
-        </div>
-
-        <!-- Library Management (Mini Project) -->
-        <div class="project-card">
-            <h3>Library Management System</h3>
-            <span class="mini">Mini Project</span>
-            <p>Java-based system for managing books.</p>
-            <a class="btn"
-               href="https://github.com/poojhaManikandan/Library_Management"
-               target="_blank">
-               View on GitHub
-            </a>
-        </div>
-
-        <!-- Scientific Calculator (Mini Project) -->
-        <div class="project-card">
-            <h3>Scientific Calculator</h3>
-            <span class="mini">Mini Project</span>
-            <p>GUI-based scientific calculator.</p>
-            <a class="btn"
-               href="https://github.com/poojhaManikandan/scientific-calculator"
-               target="_blank">
-               View on GitHub
-            </a>
-        </div>
-
-    </div>
-</section>
-
-
-<!-- ACHIEVEMENTS -->
-<section id="achievements" class="section center simple-animate">
-    <h2>Achievements & Certifications</h2>
-    <ul class="list">
-        <li>Participated in inter-college paper presentations</li>
-        <li>Participated in Codeathons&Hackathons</li>
-        <li>ML Crash Course – Google</li>
-        <li>AI & ML using Microsoft Fabric – Microsoft</li>
-        <li>IBM – AI & Data Badge</li>
-    </ul>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="section center simple-animate">
-    <h2>Contact</h2>
-    <p>Erode,India</p>
-    <p>+91 9940718507</p>
-    <p>Email: poojhacs.erd@example.com</p>
-    <p>
-    LinkedIn:
-    <a href="https://www.linkedin.com/in/poojha-manikandan-332974316"
-       target="_blank"
-       class="contact-link">
-       linkedin.com/in/poojha-manikandan-332974316
-    </a>
-</p>
-
-</section>
-
-<footer>
-    <p>© 2026 Poojha</p>
-</footer>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

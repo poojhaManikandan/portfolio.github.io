@@ -139,7 +139,7 @@ def chat():
         
     except Exception as e:
         print(f"Server Error: {str(e)}")
-        return jsonify({"reply": "I'm having trouble connecting to my brain right now! Please try again later."}), 500
+        return jsonify({"reply": f"SERVER ERROR: {str(e)}"}), 500
 
 if __name__ == "__main__":
     app.run(port=5000)

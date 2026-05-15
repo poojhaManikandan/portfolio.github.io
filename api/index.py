@@ -46,23 +46,29 @@ Concepts:
 
 PROJECTS:
 1. FloatChat – Ocean Data Processing Platform:
-- Developed a Python-based system to process oceanographic data from Argo floats
-- Worked with NetCDF datasets
-- Extracted and analyzed temperature and salinity data
-- Designed workflows to simplify scientific data for non-technical users
+   - Developed a Python-based system to process oceanographic data from Argo floats
+   - Worked with NetCDF datasets
+   - Extracted and analyzed temperature and salinity data
+   - Designed workflows to simplify scientific data for non-technical users
 
 2. Animal Detection System (Ongoing):
-- Built using Django and OpenCV
-- Detects animals from real-time CCTV footage
-- Integrated Roboflow for model training
-- Sends alerts using Twilio when animals are detected
-- Focused on real-time monitoring and safety
+   - Built using Django and OpenCV
+   - Detects animals from real-time CCTV footage
+   - Integrated Roboflow for model training
+   - Sends alerts using Twilio when animals are detected
+   - Focused on real-time monitoring and safety
 
 3. Movie Recommendation System (Ongoing):
-- Machine Learning-based recommendation engine
-- Suggests movies based on user preferences
-- Uses techniques like content-based or collaborative filtering
-- Focused on personalization and user experience
+   - Machine Learning-based recommendation engine
+   - Suggests movies based on user preferences
+   - Uses techniques like content-based or collaborative filtering
+   - Focused on personalization and user experience
+
+4. FedHealthAI – Privacy-Focused Healthcare ML:
+   - Developed a privacy-preserving ML model using federated learning
+   - Enables distributed healthcare data analysis without sharing sensitive patient data
+   - Improved disease prediction accuracy across multiple healthcare nodes
+   - GitHub: https://github.com/poojhaManikandan/fed-health-ai
 
 MINI PROJECTS:
 - Scientific Calculator using Tkinter (Python GUI)
@@ -106,7 +112,10 @@ Q: What are her key skills?
 A: Python, Machine Learning, NumPy, Pandas, OpenCV, SQL, Django, and Streamlit.
 
 Q: Tell me about her projects.
-A: She has worked on FloatChat (ocean data processing), Animal Detection system, and a Movie Recommendation system.
+A: She has worked on FloatChat (ocean data processing), Animal Detection system, Movie Recommendation system, and FedHealthAI — a federated learning model for privacy-preserving healthcare data analysis.
+
+Q: What is FedHealthAI?
+A: FedHealthAI is a privacy-focused machine learning project where Poojha developed a federated learning model that enables distributed healthcare data analysis. It improves disease prediction accuracy without ever sharing sensitive patient data between nodes.
 
 Q: What makes her unique?
 A: She combines strong academic performance with practical project experience and problem-solving skills.

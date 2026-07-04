@@ -25,9 +25,8 @@ SUMMARY:
 Poojha is a motivated AI & Data Science student with strong foundations in programming, machine learning, and data analysis. She is passionate about solving real-world problems using AI and building practical applications. She has hands-on experience with Python, machine learning workflows, and software development.
 
 EDUCATION:
-- B.Tech in AI & Data Science – K.S.Rangasamy College of Technology
-- 12th: 91%
-- 10th: 94.6%
+- B.Tech in AI & Data Science – K.S.Rangasamy College of Technology, Tiruchengode, India (CGPA: 9.4/10)
+- High School – Isha Vidhya Matric Hr.Sec School, Erode, India (12th Grade: 91%, 10th Grade: 94.6%)
 
 TECHNICAL SKILLS:
 Programming Languages:
@@ -85,9 +84,8 @@ MINI PROJECTS:
 
 INTERNSHIP EXPERIENCE:
 Machine Learning & Data Science Virtual Intern – EduSkills
-- Worked on real-world datasets
-- Learned ML model training and evaluation
-- Applied Python for data analysis and preprocessing
+- Used Python and machine learning libraries to analyze real datasets and build predictive models
+- Got hands-on experience with the complete ML lifecycle—from cleaning messy data to training, testing, and tweaking the models
 
 CERTIFICATIONS:
 - Machine Learning Crash Course – Google
@@ -95,9 +93,10 @@ CERTIFICATIONS:
 - Data Science 101 – IBM
 
 ACHIEVEMENTS:
-- Solved 150+ Data Structures and Algorithms problems
-- Participated in hackathons and codeathons
-- Presented papers in inter-college events
+- Made it to the finals at the AI for Good Hackathon with a project focused on social impact
+- Practiced problem-solving by cracking over 150 DSA questions on competitive coding sites
+- Gave presentations on technical topics at several inter-college events
+- Enjoys competing and building software quickly in hackathons and codeathons
 
 STRENGTHS:
 - Strong problem-solving ability

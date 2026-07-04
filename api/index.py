@@ -45,26 +45,33 @@ Concepts:
 - Problem Solving
 
 PROJECTS:
-1. FloatChat – Ocean Data Processing Platform:
+1. MentorAI – AI Classroom Intelligence System:
+   - Built a voice-enabled AI classroom assistant using Python, Streamlit, Gemini AI, and Whisper
+   - Delivers concept explanations, story-based learning, Socratic questioning, textbook-aware responses, and instant quiz generation
+   - Enhances classroom learning and helps teachers simplify concepts and improve student engagement
+   - GitHub: https://github.com/poojhaManikandan/MentorAI
+   - Live Demo: https://mentorai-bf6xvd5kqphpyqy2al9vu4.streamlit.app
+
+2. FloatChat – Ocean Data Processing Platform:
    - Developed a Python-based system to process oceanographic data from Argo floats
    - Worked with NetCDF datasets
    - Extracted and analyzed temperature and salinity data
    - Designed workflows to simplify scientific data for non-technical users
 
-2. Animal Detection System (Ongoing):
+3. Animal Detection System (Ongoing):
    - Built using Django and OpenCV
    - Detects animals from real-time CCTV footage
    - Integrated Roboflow for model training
    - Sends alerts using Twilio when animals are detected
    - Focused on real-time monitoring and safety
 
-3. Movie Recommendation System (Ongoing):
+4. Movie Recommendation System (Ongoing):
    - Machine Learning-based recommendation engine
    - Suggests movies based on user preferences
    - Uses techniques like content-based or collaborative filtering
    - Focused on personalization and user experience
 
-4. FedHealthAI – Privacy-Focused Healthcare ML:
+5. FedHealthAI – Privacy-Focused Healthcare ML:
    - Developed a privacy-preserving ML model using federated learning
    - Enables distributed healthcare data analysis without sharing sensitive patient data
    - Improved disease prediction accuracy across multiple healthcare nodes
@@ -112,7 +119,10 @@ Q: What are her key skills?
 A: Python, Machine Learning, NumPy, Pandas, OpenCV, SQL, Django, and Streamlit.
 
 Q: Tell me about her projects.
-A: She has worked on FloatChat (ocean data processing), Animal Detection system, Movie Recommendation system, and FedHealthAI — a federated learning model for privacy-preserving healthcare data analysis.
+A: She has worked on MentorAI (an AI classroom intelligence system), FloatChat (ocean data processing), Animal Detection system, Movie Recommendation system, and FedHealthAI — a federated learning model for privacy-preserving healthcare data analysis.
+
+Q: What is MentorAI?
+A: MentorAI is an AI classroom intelligence system Poojha built using Python, Streamlit, Gemini AI, Whisper, and gTTS. It is a voice-enabled classroom assistant that helps teachers simplify concepts, generate quizzes, and deliver story-based learning and Socratic questioning. Live Demo: https://mentorai-bf6xvd5kqphpyqy2al9vu4.streamlit.app , GitHub: https://github.com/poojhaManikandan/MentorAI
 
 Q: What is FedHealthAI?
 A: FedHealthAI is a privacy-focused machine learning project where Poojha developed a federated learning model that enables distributed healthcare data analysis. It improves disease prediction accuracy without ever sharing sensitive patient data between nodes.

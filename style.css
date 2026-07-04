@@ -367,13 +367,13 @@ h1, h2, h3, h4 {
     align-items: center;
     border-top: 1px solid var(--border-color);
     padding-top: 15px;
-    flex-wrap: wrap;
-    gap: 15px;
+    flex-wrap: nowrap;
+    gap: 10px;
 }
 
 .link-group {
     display: flex;
-    gap: 15px;
+    gap: 10px;
 }
 
 .badge {

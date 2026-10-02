@@ -98,7 +98,9 @@ module.exports = async function handler(req, res) {
     }
 
     const genAI = new GoogleGenerativeAI(apiKey);
-    const model = genAI.getGenerativeModel({ model: "gemini-3.8-flash" });
+
+    // Try models in order — fallback if one is overloaded
+    const models = ["gemini-3.8-flash", "gemini-2.5-flash", "gemini-1.5-pro"];
 
     const prompt = `You are Poojha's AI assistant on her portfolio website.
 RULES:
@@ -111,9 +113,21 @@ ${data}
 
 QUESTION: ${message}`;
 
-    const result = await model.generateContent(prompt);
-    const text = result.response.text();
-    return res.status(200).json({ reply: text });
+    let lastError;
+    for (const modelName of models) {
+      try {
+        const model = genAI.getGenerativeModel({ model: modelName });
+        const result = await model.generateContent(prompt);
+        const text = result.response.text();
+        return res.status(200).json({ reply: text });
+      } catch (err) {
+        lastError = err;
+        // Only retry on 503 (overloaded) — bail immediately on other errors
+        if (!err.message.includes("503")) break;
+        console.warn(`Model ${modelName} overloaded, trying next...`);
+      }
+    }
+    throw lastError;
 
   } catch (err) {
     console.error("Chat error:", err.message);

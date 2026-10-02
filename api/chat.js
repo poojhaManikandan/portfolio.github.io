@@ -98,9 +98,7 @@ module.exports = async function handler(req, res) {
     }
 
     const genAI = new GoogleGenerativeAI(apiKey);
-
-    // Try models in order — fallback if one is overloaded
-    const models = ["gemini-3.8-flash", "gemini-2.5-flash", "gemini-1.5-pro"];
+    const model = genAI.getGenerativeModel({ model: "gemini-3.8-flash" });
 
     const prompt = `You are Poojha's AI assistant on her portfolio website.
 RULES:
@@ -113,18 +111,18 @@ ${data}
 
 QUESTION: ${message}`;
 
+    // Retry up to 3 times with increasing delay on 503 overload
+    const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
     let lastError;
-    for (const modelName of models) {
+    for (let attempt = 0; attempt < 3; attempt++) {
       try {
-        const model = genAI.getGenerativeModel({ model: modelName });
         const result = await model.generateContent(prompt);
-        const text = result.response.text();
-        return res.status(200).json({ reply: text });
+        return res.status(200).json({ reply: result.response.text() });
       } catch (err) {
         lastError = err;
-        // Only retry on 503 (overloaded) — bail immediately on other errors
         if (!err.message.includes("503")) break;
-        console.warn(`Model ${modelName} overloaded, trying next...`);
+        console.warn(`Attempt ${attempt + 1} overloaded, retrying...`);
+        await sleep((attempt + 1) * 1000);
       }
     }
     throw lastError;

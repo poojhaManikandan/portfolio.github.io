@@ -1,19 +1,18 @@
 from flask import Flask, request, jsonify
-import google.generativeai as genai
 from flask_cors import CORS
 import os
 from dotenv import load_dotenv
+import google.generativeai as genai
 
 load_dotenv()
 
 app = Flask(__name__)
 CORS(app)
 
-# 🔑 Configure Gemini using the official SDK
-genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
-model = genai.GenerativeModel("gemini-1.5-flash")
+# 🔑 Configure Gemini
+genai.configure(api_key=os.environ.get("GEMINI_API_KEY"))
 
-# 🧠 Your portfolio data (important)
+# 🧠 Your portfolio data
 data = """
 PERSONAL INFORMATION:
 Name: Poojha M
@@ -136,28 +135,29 @@ A: She has strong fundamentals, hands-on project experience, and a passion for A
 @app.route("/api/chat", methods=["POST"])
 def chat():
     try:
-        user_message = request.json.get("message")
-        
-        prompt = f"""
-        You are Poojha's AI assistant.
-        RULES:
-        - Answer ONLY from the given data
-        - Be clear and professional. Answer politely in 1-3 sentences.
-        - If unknown, say "I don't have that information"
+        user_message = request.json.get("message", "")
+        if not user_message:
+            return jsonify({"reply": "Please ask me something!"}), 400
 
-        DATA:
-        {data}
+        prompt = f"""You are Poojha's AI assistant on her portfolio website.
+RULES:
+- Answer ONLY from the given data below.
+- Be clear, friendly and professional. Answer in 1-3 sentences.
+- If the question is not covered in the data, say "I don't have that information."
 
-        QUESTION:
-        {user_message}
-        """
+DATA:
+{data}
 
+QUESTION: {user_message}
+"""
+
+        model = genai.GenerativeModel("gemini-1.5-flash")
         response = model.generate_content(prompt)
         return jsonify({"reply": response.text})
-        
+
     except Exception as e:
         print(f"Server Error: {str(e)}")
-        return jsonify({"reply": "I'm having trouble connecting right now. Please try again in a moment!"}), 500
+        return jsonify({"reply": f"Error: {str(e)}"}), 500
 
 if __name__ == "__main__":
-    app.run(port=5000)
+    app.run(port=5000, debug=True)

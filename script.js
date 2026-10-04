@@ -19,6 +19,17 @@ const chatInput = document.getElementById("chat-input");
 const chatSendBtn = document.getElementById("chat-send-btn");
 let isSending = false;
 
+document.querySelectorAll(".project-image[src]").forEach((image) => {
+    image.addEventListener("error", () => {
+        const fallback = document.createElement("div");
+        fallback.className = "project-image project-image-fallback";
+        fallback.setAttribute("role", "img");
+        fallback.setAttribute("aria-label", `${image.alt}; screenshot preview unavailable`);
+        fallback.textContent = image.alt.replace("Screenshot preview of ", "");
+        image.replaceWith(fallback);
+    }, { once: true });
+});
+
 // Toggle chat window
 chatToggleBtn.addEventListener("click", () => {
     chatWindow.classList.remove("hidden");

@@ -24,30 +24,45 @@ Concepts: Data Structures and Algorithms, Machine Learning, Data Analysis, Probl
 
 PROJECTS:
 1. MentorAI – AI Classroom Intelligence System:
-   - Voice-enabled AI classroom assistant using Python, Streamlit, Gemini AI, and Whisper
-   - Concept explanations, story-based learning, Socratic questioning, quiz generation
+   - Problem: Teachers need to explain concepts, generate quizzes, and check student understanding during class.
+   - Approach: Voice-enabled classroom co-pilot using Python, Streamlit, Gemini AI, and Whisper; supports explanations, stories, Socratic questions, and quizzes.
+   - Result: Interactive teaching support and quick understanding checks in one classroom workflow.
    - GitHub: https://github.com/poojhaManikandan/MentorAI
    - Live Demo: https://mentorai-bf6xvd5kqphpyqy2al9vu4.streamlit.app
 
 2. FloatChat – Ocean Data Processing Platform:
-   - Python-based system to process Argo float oceanographic data (NetCDF)
-   - Extracts temperature and salinity data for non-technical users
+   - Problem: Argo-float NetCDF ocean data is difficult for non-specialists to explore.
+   - Approach: Processes float datasets and surfaces temperature and salinity measurements in an accessible dashboard.
+   - Result: Makes key ocean observations easier to inspect without parsing raw files.
+   - Live Demo: https://float-chat-xi.vercel.app
+   - GitHub: https://github.com/Aariyan7/Float_Chat
 
 3. Animal Detection System:
-   - Built using Django and OpenCV for real-time CCTV animal detection
-   - Roboflow model training, Twilio alerts
+   - Problem: Monitoring camera feeds for animal activity requires constant manual attention.
+   - Approach: Django, OpenCV, Roboflow model training, and Twilio alerts.
+   - Result: Automated detection-and-alert workflow for monitoring footage.
    - GitHub: https://github.com/poojhaManikandan/animal_detection
 
 4. Movie Recommendation System (Ongoing):
-   - ML-based recommendation engine using collaborative/content-based filtering
+   - Problem: Finding films that match a viewer's interests can be time-consuming.
+   - Approach: Exploring content-based and collaborative filtering to rank recommendations by user preference.
+   - Result: Personalized movie-discovery experience is the goal; development is ongoing.
 
 5. FedHealthAI – Privacy-Focused Healthcare ML:
-   - Federated learning model for distributed healthcare data analysis
+   - Problem: Hospitals need to collaborate on disease models without sharing private patient records.
+   - Approach: Local hospital-node training with secure aggregation; React, FastAPI, and PyTorch.
+   - Result: Collaborative model training while raw patient data stays local.
    - GitHub: https://github.com/poojhaManikandan/fed-health-ai
+
+6. Threatly – Misinformation Risk Analyzer:
+   - Problem: Readers need help spotting potentially misleading claims in online text.
+   - Approach: NLP prototype that scans text and flags potential misinformation risk.
+   - Result: Provides a first-pass signal to support further fact-checking.
+   - Live Demo: https://threatly-ez6jqdawdgeafcljpay3ht.streamlit.app
+   - GitHub: https://github.com/poojhaManikandan/Threatly
 
 MINI PROJECTS:
 - Scientific Calculator (Tkinter), Attendance Tracker, Library Management System (Java)
-- Threatly – AI Misinformation Risk Analyzer
 
 INTERNSHIP:
 - Data Analysis Intern – Finest Coder (completed, offline, 1 month)
@@ -58,6 +73,7 @@ Machine Learning & Data Science Virtual Intern – EduSkills
 CERTIFICATIONS:
 - Machine Learning Crash Course – Google
 - AI & ML using Microsoft Fabric – Microsoft
+- Microsoft SQL: AI Developer Associate (Global Certification)
 - Data Science 101 – IBM
 
 ACHIEVEMENTS:

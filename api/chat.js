@@ -50,6 +50,8 @@ MINI PROJECTS:
 - Threatly – AI Misinformation Risk Analyzer
 
 INTERNSHIP:
+- Data Analysis Intern – Finest Coder (completed, offline, 1 month)
+  - Developed a project using data analytics tools and presented the project and its findings
 Machine Learning & Data Science Virtual Intern – EduSkills
 - Built predictive models, hands-on ML lifecycle experience
 

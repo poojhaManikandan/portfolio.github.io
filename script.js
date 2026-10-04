@@ -17,6 +17,7 @@ const chatWindow = document.getElementById("chat-window");
 const chatBody = document.getElementById("chat-body");
 const chatInput = document.getElementById("chat-input");
 const chatSendBtn = document.getElementById("chat-send-btn");
+let isSending = false;
 
 // Toggle chat window
 chatToggleBtn.addEventListener("click", () => {
@@ -63,7 +64,10 @@ function hideTypingIndicator() {
 // Handle sending message
 async function handleSend() {
     const text = chatInput.value.trim();
-    if (!text) return;
+    if (!text || isSending) return;
+    isSending = true;
+    chatSendBtn.disabled = true;
+    chatInput.disabled = true;
 
     // 1. Display user message
     appendMessage("user", text);
@@ -81,8 +85,11 @@ async function handleSend() {
             body: JSON.stringify({ message: text })
         });
         
-        const data = await response.json();
-        const botReply = data.reply;
+        const data = await response.json().catch(() => ({}));
+        if (!response.ok) {
+            throw new Error(data.reply || `Request failed (${response.status}).`);
+        }
+        const botReply = typeof data.reply === "string" ? data.reply : "I couldn't understand the server response. Please try again.";
 
         hideTypingIndicator();
         appendMessage("bot", botReply);
@@ -90,13 +97,18 @@ async function handleSend() {
     } catch (error) {
         console.error("Error asking agent:", error);
         hideTypingIndicator();
-        appendMessage("bot", "Oops! I encountered an error connecting to my brain. Is the Python server running?");
+        appendMessage("bot", error.message || "The AI assistant is temporarily unavailable. Please try again shortly.");
+    } finally {
+        isSending = false;
+        chatSendBtn.disabled = false;
+        chatInput.disabled = false;
+        chatInput.focus();
     }
 }
 
 // Event Listeners for send
 chatSendBtn.addEventListener("click", handleSend);
-chatInput.addEventListener("keypress", (e) => {
+chatInput.addEventListener("keydown", (e) => {
     if (e.key === "Enter") {
         handleSend();
     }

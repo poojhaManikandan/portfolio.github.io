@@ -87,9 +87,12 @@ module.exports = async function handler(req, res) {
   }
 
   try {
-    const { message } = req.body;
+    const message = typeof req.body?.message === "string" ? req.body.message.trim() : "";
     if (!message) {
       return res.status(400).json({ reply: "Please ask me something!" });
+    }
+    if (message.length > 1000) {
+      return res.status(400).json({ reply: "Please keep your message under 1,000 characters." });
     }
 
     const apiKey = process.env.GEMINI_API_KEY;
@@ -98,7 +101,6 @@ module.exports = async function handler(req, res) {
     }
 
     const genAI = new GoogleGenerativeAI(apiKey);
-    const model = genAI.getGenerativeModel({ model: "gemini-3.8-flash" });
 
     const prompt = `You are Poojha's AI assistant on her portfolio website.
 RULES:
@@ -111,24 +113,34 @@ ${data}
 
 QUESTION: ${message}`;
 
-    // Retry up to 3 times with increasing delay on 503 overload
-    const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+    // Try the configured model first, then a lightweight stable model if it is overloaded.
+    const primaryModel = process.env.GEMINI_MODEL || "gemini-3.8-flash";
+    const models = [...new Set([primaryModel, "gemini-3.5-flash-lite"])];
     let lastError;
-    for (let attempt = 0; attempt < 3; attempt++) {
+    for (const modelName of models) {
       try {
+        const model = genAI.getGenerativeModel({ model: modelName });
         const result = await model.generateContent(prompt);
-        return res.status(200).json({ reply: result.response.text() });
+        const reply = result.response.text();
+        if (!reply) throw new Error("The model returned an empty response.");
+        return res.status(200).json({ reply });
       } catch (err) {
         lastError = err;
-        if (!err.message.includes("503")) break;
-        console.warn(`Attempt ${attempt + 1} overloaded, retrying...`);
-        await sleep((attempt + 1) * 1000);
+        const status = err.status || err.statusCode;
+        if (status !== 503 && !String(err.message).includes("503")) break;
+        console.warn(`Gemini model ${modelName} is overloaded; trying fallback if available.`);
       }
     }
     throw lastError;
 
   } catch (err) {
     console.error("Chat error:", err.message);
-    return res.status(500).json({ reply: `Error: ${err.message}` });
+    const status = err.status || err.statusCode;
+    const unavailable = status === 503 || String(err.message).includes("503");
+    return res.status(unavailable ? 503 : 500).json({
+      reply: unavailable
+        ? "The AI assistant is busy right now. Please try again in a moment."
+        : "I couldn't process that message right now. Please try again shortly."
+    });
   }
 };

@@ -49,23 +49,19 @@
     <!-- SKILLS -->
     <section id="skills" class="section center">
         <h2 class="section-title simple-animate">Technical Skills</h2>
-        <div class="skills-grid simple-animate">
-            <article class="skill-category glass-card">
-                <h3><i class="fas fa-code"></i> Programming</h3>
-                <ul><li>Python</li><li>Java</li><li>C</li><li>SQL</li></ul>
-            </article>
-            <article class="skill-category glass-card">
-                <h3><i class="fas fa-chart-line"></i> Data & Machine Learning</h3>
-                <ul><li>Data analysis</li><li>NumPy</li><li>Pandas</li><li>Scikit-learn</li><li>Machine learning</li></ul>
-            </article>
-            <article class="skill-category glass-card">
-                <h3><i class="fas fa-screwdriver-wrench"></i> Tools & Frameworks</h3>
-                <ul><li>OpenCV</li><li>Django</li><li>Flask</li><li>Streamlit</li><li>Git & GitHub</li></ul>
-            </article>
-            <article class="skill-category glass-card">
-                <h3><i class="fas fa-lightbulb"></i> Core Strengths</h3>
-                <ul><li>Data structures & algorithms</li><li>Problem solving</li><li>Data visualization</li><li>Project presentation</li></ul>
-            </article>
+        <div class="skills-visual-grid simple-animate">
+            <div class="skill-chip"><i class="devicon-python-plain colored"></i><span>Python</span></div>
+            <div class="skill-chip"><i class="devicon-c-plain colored"></i><span>C</span></div>
+            <div class="skill-chip"><i class="devicon-java-plain colored"></i><span>Java</span></div>
+            <div class="skill-chip"><i class="devicon-mysql-plain colored"></i><span>SQL</span></div>
+            <div class="skill-chip"><i class="devicon-numpy-plain colored"></i><span>NumPy</span></div>
+            <div class="skill-chip"><i class="devicon-pandas-plain colored"></i><span>Pandas</span></div>
+            <div class="skill-chip"><img src="https://cdn.simpleicons.org/scikitlearn/F7931E" alt="Scikit-Learn"><span>Scikit-Learn</span></div>
+            <div class="skill-chip"><i class="devicon-opencv-plain colored"></i><span>OpenCV</span></div>
+            <div class="skill-chip"><i class="devicon-django-plain"></i><span>Django</span></div>
+            <div class="skill-chip"><i class="devicon-flask-original"></i><span>Flask</span></div>
+            <div class="skill-chip"><img src="https://cdn.simpleicons.org/streamlit/FF4B4B" alt="Streamlit"><span>Streamlit</span></div>
+            <div class="skill-chip"><i class="devicon-git-plain colored"></i><span>Git &amp; GitHub</span></div>
         </div>
     </section>
 
@@ -81,16 +77,15 @@
                 <div class="project-content">
                     <h3>MentorAI – AI Classroom Intelligence System</h3>
                     <ul class="project-bullets">
-                        <li><strong>Problem:</strong> Teachers need to simplify lessons, create quizzes, and check student understanding without interrupting class.</li>
-                        <li><strong>Approach:</strong> Built a voice-enabled classroom co-pilot with Streamlit, Gemini, and Whisper for explanations, story learning, quizzes, and Socratic questions.</li>
-                        <li><strong>Result:</strong> One classroom workflow for interactive teaching support and quick learning checks.</li>
+                        <li><strong>Impact:</strong> Enhanced classroom learning by helping teachers simplify concepts, generate quizzes, and improve student engagement through AI-assisted teaching.</li>
+                        <li><strong>How:</strong> Built a voice-enabled AI classroom assistant using Streamlit, Gemini AI, and Whisper for concept explanations, quizzes, and interactive learning.</li>
                     </ul>
                 </div>
                 <div class="project-links">
                     <span class="badge">Gemini API & Python</span>
                     <div class="link-group">
-                        <a href="https://mentorai-bf6xvd5kqphpyqy2al9vu4.streamlit.app/" target="_blank" rel="noopener noreferrer" class="project-action"><i class="fas fa-arrow-up-right-from-square"></i> Live Demo</a>
-                        <a href="https://github.com/poojhaManikandan/MentorAI" target="_blank" rel="noopener noreferrer" class="project-action"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://github.com/poojhaManikandan/MentorAI" target="_blank" class="icon-link" title="Source Code"><i class="fab fa-github"></i> Source</a>
+                       
                     </div>
                 </div>
             </div>
@@ -100,16 +95,14 @@
                 <div class="project-content">
                     <h3>FloatChat – Ocean Data Processing Platform</h3>
                     <ul class="project-bullets">
-                        <li><strong>Problem:</strong> Argo-float NetCDF files are difficult for non-specialists to explore.</li>
-                        <li><strong>Approach:</strong> Processes float data and surfaces temperature and salinity measurements through an accessible dashboard.</li>
-                        <li><strong>Result:</strong> Makes key ocean observations easier to inspect without manually parsing raw files.</li>
+                        <li><strong>Impact:</strong> Simplified complex oceanographic data so researchers without a coding background could interpret it instantly.</li>
+                        <li><strong>How:</strong> Built a Python backend pipeline to parse massive datasets (NetCDF format) from Argo floats, extracting critical temperature and salinity metrics.</li>
                     </ul>
                 </div>
                 <div class="project-links">
-                    <span class="badge">Ocean Data · NetCDF</span>
+                    <span class="badge">Python</span>
                     <div class="link-group">
-                        <a href="https://float-chat-xi.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-action"><i class="fas fa-arrow-up-right-from-square"></i> Live Demo</a>
-                        <a href="https://github.com/Aariyan7/Float_Chat" target="_blank" rel="noopener noreferrer" class="project-action"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://github.com/Aariyan7/Float_Chat" target="_blank" class="icon-link" title="Source Code"><i class="fab fa-github"></i> Source</a>
                     </div>
                 </div>
             </div>
@@ -119,16 +112,14 @@
                 <div class="project-content">
                     <h3>Animal Detection & Monitoring</h3>
                     <ul class="project-bullets">
-                        <li><strong>Problem:</strong> Monitoring camera feeds for animal activity can require constant manual attention.</li>
-                        <li><strong>Approach:</strong> Combines a Django interface with OpenCV-based detection, Roboflow model training, and Twilio alerts.</li>
-                        <li><strong>Result:</strong> Provides an automated detection-and-alert workflow for monitoring footage.</li>
+                        <li><strong>Impact:</strong> Enabled automated, real-time wildlife monitoring by replacing manual human observation with an AI system.</li>
+                        <li><strong>How:</strong> Trained a custom Computer Vision model to accurately classify species, then integrated it with live camera feeds for instant detection.</li>
                     </ul>
                 </div>
                 <div class="project-links">
                     <span class="badge">Computer Vision</span>
                     <div class="link-group">
-                        <span class="project-link-unavailable">Demo not hosted</span>
-                        <a href="https://github.com/poojhaManikandan/animal_detection_live" target="_blank" rel="noopener noreferrer" class="project-action"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://github.com/poojhaManikandan/animal_detection" target="_blank" class="icon-link" title="Source Code"><i class="fab fa-github"></i> Source</a>
                     </div>
                 </div>
             </div>
@@ -139,16 +130,14 @@
                     <h3>Movie Recommendation Engine</h3>
                     <span class="status-badge">Developing</span>
                     <ul class="project-bullets">
-                        <li><strong>Problem:</strong> Finding films that match a viewer's interests can be time-consuming.</li>
-                        <li><strong>Approach:</strong> Exploring content-based and collaborative filtering to rank recommendations by user preference.</li>
-                        <li><strong>Result:</strong> A personalized movie-discovery experience is the project goal; development is ongoing.</li>
+                        <li><strong>Impact:</strong> Creating a highly personalized discovery experience that helps users find movies they'll actually enjoy based on past behavior.</li>
+                        <li><strong>How:</strong> Testing various machine learning algorithms and collaborative filtering techniques to predict optimal viewing suggestions.</li>
                     </ul>
                 </div>
                 <div class="project-links">
                     <span class="badge">Machine Learning</span>
                     <div class="link-group">
-                        <span class="project-link-unavailable">Demo not published</span>
-                        <span class="project-link-unavailable">GitHub repo not published</span>
+                        <a href="#" target="_blank" class="icon-link" title="Source Code"><i class="fab fa-github"></i> Source</a>
                     </div>
                 </div>
             </div>
@@ -158,35 +147,14 @@
                 <div class="project-content">
                     <h3>FedHealthAI – Privacy-Focused Healthcare ML</h3>
                     <ul class="project-bullets">
-                        <li><strong>Problem:</strong> Hospitals need to collaborate on disease models without sharing private patient records.</li>
-                        <li><strong>Approach:</strong> Trains locally at hospital nodes and securely aggregates model updates; built with React, FastAPI, and PyTorch.</li>
-                        <li><strong>Result:</strong> Supports collaborative model training while raw patient data stays local.</li>
+                        <li><strong>Impact:</strong> Improved disease prediction accuracy across distributed healthcare datasets without ever exposing sensitive patient data.</li>
+                        <li><strong>How:</strong> Developed a federated learning ML model that trains locally on each node and aggregates insights centrally — keeping data private at every step.</li>
                     </ul>
                 </div>
                 <div class="project-links">
                     <span class="badge">Federated Learning</span>
                     <div class="link-group">
-                        <span class="project-link-unavailable">Demo not hosted</span>
-                        <a href="https://github.com/poojhaManikandan/fed-health-ai" target="_blank" rel="noopener noreferrer" class="project-action"><i class="fab fa-github"></i> GitHub</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Threatly -->
-            <div class="project-card glass-card simple-animate">
-                <div class="project-content">
-                    <h3>Threatly – Misinformation Risk Analyzer</h3>
-                    <ul class="project-bullets">
-                        <li><strong>Problem:</strong> Readers need help spotting potentially misleading claims in online text.</li>
-                        <li><strong>Approach:</strong> Built an NLP prototype that scans submitted text and flags potential misinformation risk.</li>
-                        <li><strong>Result:</strong> Gives users a quick first-pass signal to support further fact-checking.</li>
-                    </ul>
-                </div>
-                <div class="project-links">
-                    <span class="badge">NLP · Streamlit</span>
-                    <div class="link-group">
-                        <a href="https://threatly-ez6jqdawdgeafcljpay3ht.streamlit.app/" target="_blank" rel="noopener noreferrer" class="project-action"><i class="fas fa-arrow-up-right-from-square"></i> Live Demo</a>
-                        <a href="https://github.com/poojhaManikandan/Threatly" target="_blank" rel="noopener noreferrer" class="project-action"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://github.com/poojhaManikandan/fed-health-ai" target="_blank" class="icon-link" title="Source Code"><i class="fab fa-github"></i> Source</a>
                     </div>
                 </div>
             </div>
@@ -198,12 +166,11 @@
         <div class="mini-projects-list glass-card simple-animate">
             <div class="mini-item">
                 <div class="mini-info">
-                    <h4>Library Management System</h4>
-                    <p>A Java desktop app to track book issuing and returning, replacing manual record keeping.</p>
+                    <h4>Threatly – Misinformation Analyzer</h4>
+                    <p>An NLP prototype designed to scan text and flag potentially fake news.</p>
                 </div>
-                <a href="https://github.com/poojhaManikandan/Library_Management" target="_blank" rel="noopener noreferrer" class="project-action"><i class="fab fa-github"></i> GitHub</a>
+                <a href="https://threatly-ez6jqdawdgeafcljpay3ht.streamlit.app/" target="_blank" class="icon-link"><i class="fab fa-github"></i></a>
             </div>
-            
         </div>
     </section>
 
@@ -211,12 +178,12 @@
     <section id="experience" class="section center">
         <h2 class="section-title simple-animate">Internship Experience</h2>
         <div class="timeline simple-animate">
-            <div class="timeline-item glass-card finest-coder-internship">
+            <div class="timeline-item glass-card">
                 <span class="status-badge">Completed · In person</span>
                 <h3>Data Analysis Intern · 1 Month</h3>
                 <h4 class="company">Finest Coder</h4>
                 <ul class="text-left project-bullets">
-                    <li>Completed a one-month offline internship focused on data analysis.</li>
+                    <li>Completed a one-month, in-person internship focused on data analysis.</li>
                     <li>Developed a project using data analytics tools and presented the project and its findings.</li>
                 </ul>
             </div>
@@ -254,7 +221,7 @@
                     <li>Google: Machine Learning Crash Course</li>
                     <li>Microsoft: AI & ML using Microsoft Fabric</li>
                     <li>Microsoft SQL: AI Developer Associate (Global Certification)</li>
-                    <li>IBM: Data Science 101</li>
+                    <li>AWS: AI &amp; ML Scholar 2026 – Challenge Completion</li>
                 </ul>
             </div>
         </div>

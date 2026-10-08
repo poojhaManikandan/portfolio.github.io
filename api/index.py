@@ -44,47 +44,41 @@ Concepts:
 
 PROJECTS:
 1. MentorAI – AI Classroom Intelligence System:
-    - Problem: Teachers need to explain concepts, generate quizzes, and check student understanding during class.
-    - Approach: Voice-enabled classroom co-pilot using Python, Streamlit, Gemini AI, and Whisper; supports explanations, stories, Socratic questions, and quizzes.
-    - Result: Interactive teaching support and quick understanding checks in one classroom workflow.
+   - Built a voice-enabled AI classroom assistant using Python, Streamlit, Gemini AI, and Whisper
+   - Delivers concept explanations, story-based learning, Socratic questioning, textbook-aware responses, and instant quiz generation
+   - Enhances classroom learning and helps teachers simplify concepts and improve student engagement
    - GitHub: https://github.com/poojhaManikandan/MentorAI
    - Live Demo: https://mentorai-bf6xvd5kqphpyqy2al9vu4.streamlit.app
 
 2. FloatChat – Ocean Data Processing Platform:
-    - Problem: Argo-float NetCDF ocean data is difficult for non-specialists to explore.
-    - Approach: Processes float datasets and surfaces temperature and salinity measurements in an accessible dashboard.
-    - Result: Makes key ocean observations easier to inspect without parsing raw files.
-    - GitHub: https://github.com/Aariyan7/Float_Chat
-    - Live Demo: https://float-chat-xi.vercel.app
+   - Developed a Python-based system to process oceanographic data from Argo floats
+   - Worked with NetCDF datasets
+   - Extracted and analyzed temperature and salinity data
+   - Designed workflows to simplify scientific data for non-technical users
 
 3. Animal Detection System (Ongoing):
-    - Problem: Monitoring camera feeds for animal activity requires constant manual attention.
-    - Approach: Django, OpenCV, Roboflow model training, and Twilio alerts.
-    - Result: Automated detection-and-alert workflow for monitoring footage.
-    - GitHub: https://github.com/poojhaManikandan/animal_detection_live
+   - Built using Django and OpenCV
+   - Detects animals from real-time CCTV footage
+   - Integrated Roboflow for model training
+   - Sends alerts using Twilio when animals are detected
+   - Focused on real-time monitoring and safety
 
 4. Movie Recommendation System (Ongoing):
-    - Problem: Finding films that match a viewer's interests can be time-consuming.
-    - Approach: Exploring content-based and collaborative filtering to rank recommendations by user preference.
-    - Result: Personalized movie-discovery experience is the goal; development is ongoing.
+   - Machine Learning-based recommendation engine
+   - Suggests movies based on user preferences
+   - Uses techniques like content-based or collaborative filtering
+   - Focused on personalization and user experience
 
 5. FedHealthAI – Privacy-Focused Healthcare ML:
-    - Problem: Hospitals need to collaborate on disease models without sharing private patient records.
-    - Approach: Local hospital-node training with secure aggregation; React, FastAPI, and PyTorch.
-    - Result: Collaborative model training while raw patient data stays local.
+   - Developed a privacy-preserving ML model using federated learning
+   - Enables distributed healthcare data analysis without sharing sensitive patient data
+   - Improved disease prediction accuracy across multiple healthcare nodes
    - GitHub: https://github.com/poojhaManikandan/fed-health-ai
-
-6. Threatly – Misinformation Risk Analyzer:
-    - Problem: Readers need help spotting potentially misleading claims in online text.
-    - Approach: NLP prototype that scans text and flags potential misinformation risk.
-    - Result: Provides a first-pass signal to support further fact-checking.
-    - Live Demo: https://threatly-ez6jqdawdgeafcljpay3ht.streamlit.app
-    - GitHub: https://github.com/poojhaManikandan/Threatly
 
 MINI PROJECTS:
 - Scientific Calculator using Tkinter (Python GUI)
 - Attendance Tracker System
-- Library Management System (Java)
+- Threatly – AI Misinformation Risk Analyzer
 
 INTERNSHIP EXPERIENCE:
 Data Analysis Intern – Finest Coder (completed, offline, 1 month)
@@ -98,7 +92,7 @@ CERTIFICATIONS:
 - Machine Learning Crash Course – Google
 - AI & ML using Microsoft Fabric – Microsoft
 - Microsoft SQL: AI Developer Associate (Global Certification)
-- Data Science 101 – IBM
+- AWS AI & ML Scholar 2026 – Challenge Completion Badge
 
 ACHIEVEMENTS:
 - Made it to the finals at the AI for Good Hackathon with a project focused on social impact
@@ -139,6 +133,12 @@ A: She combines strong academic performance with practical project experience an
 
 Q: Why should we hire her?
 A: She has strong fundamentals, hands-on project experience, and a passion for AI, making her a valuable addition to any team.
+
+Q: What did Poojha do at Finest Coder?
+A: Poojha completed a one-month, in-person Data Analysis internship at Finest Coder, where she developed a project using data analytics tools and presented it.
+
+Q: What SQL certification has Poojha completed?
+A: She completed the Microsoft SQL: AI Developer Associate global certification.
 """
 
 @app.route("/api/chat", methods=["POST"])
